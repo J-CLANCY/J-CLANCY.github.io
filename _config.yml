@@ -16,10 +16,10 @@ minimal_mistakes_skin    : "dark" # "default" , "air", "aqua", "contrast", "dark
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Joseph Clancy"
-title_separator          : # "|"
+title                    : "Personal Website"
+title_separator          : "|"
 subtitle                 : # site tagline that appears below site title in masthead
-name                     : #"Joseph Clancy"
+name                     : "Joseph Clancy"
 description              : "My personal website."
 URL                      : "https://j-clancy.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
@@ -114,7 +114,7 @@ analytics:
 author:
   name             : "Joseph Clancy"
   avatar           : "/assets/images/Joe.jpg"
-  bio              : "I'm an Electronic Engineer from the west coast of Ireland. I'm currently finalising my PhD from the University of Galway, Ireland, in Wirless Communications for Intelligent Transport Systems. My research focuses on challenges associated with latency and reliability for safety-critical communications."
+  bio              : "I'm an Electronic Engineer from the west coast of Ireland. Currently trying to finish a PhD in Wireless Communications for Intelligent Transport Systems."
   location         : "Ottawa City, Ontario, Canada"
   email            : #"j.clancy8051@gmail.com"
   links:
