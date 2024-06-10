@@ -1,13 +1,13 @@
 # main links
 main:
   - title: "Projects"
-    URL: "{{ site.baseurl }}/projects/"
+    URL: "/projects/"
   - title: "Resume"
-    URL: "{{ site.baseurl }}/resume/"
+    URL: "/resume/"
   - title: "Blog"
-    URL: "{{ site.baseurl }}/blog/"
+    URL: "/blog/"
   - title: "Slipbox"
-    URL: "{{ site.baseurl }}/slipbox/"
+    URL: "/slipbox/"
   # - title: "About"
   #   url: https://mmistakes.github.io/minimal-mistakes/about/
   # - title: "Sample Posts"
