@@ -242,6 +242,11 @@ timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 #paginate: 5 # amount of posts to show
 #paginate_path: /_content/page:num/
 
+# Collections
+collections:
+  - posts
+  - projects
+
 # Pagination with jekyll-paginate-v2
 # See https://github.com/sverrirs/jekyll-paginate-v2/blob/master/README-GENERATOR.md#site-configuration
 #   for configuration details
@@ -249,19 +254,33 @@ pagination:
   # Set enabled to true to use paginate v2
   enabled: true
   debug: false
-  collection: '_posts'
-  per_page: 10
-  permalink: '/page/:num/'
-  title: ':title - page :num'
-  limit: 0
-  sort_field: 'date'
-  sort_reverse: true
-  category: 'posts'
-  tag: ''
-  locale: ''
-  trail:
-    before: 2
-    after: 2
+  collections:
+    - name: 'posts'
+      per_page: 10
+      permalink: '/page/:num/'
+      title: ':title - page :num'
+      limit: 0
+      sort_field: 'date'
+      sort_reverse: true
+      category: 'posts'
+      tag: ''
+      locale: ''
+      trail:
+        before: 2
+        after: 2
+    - name: 'projects'
+      per_page: 5
+      permalink: '/projects/page/:num/'
+      title: ':title - page :num'
+      limit: 0
+      sort_field: 'date'
+      sort_reverse: true
+      category: ''
+      tag: ''
+      locale: ''
+      trail:
+        before: 2
+        after: 2
 
 
 # Plugins (previously gems:)
