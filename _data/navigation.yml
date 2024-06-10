@@ -5,7 +5,7 @@ main:
   - title: "Resume"
     URL: "/resume/"
   - title: "Blog"
-    URL: "/blog/"
+    URL: "{{ site.URL }}/blog/"
   - title: "Slipbox"
     URL: "/slipbox/"
   # - title: "About"
