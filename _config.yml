@@ -270,7 +270,7 @@ pagination:
         after: 2
     - name: 'projects'
       per_page: 5
-      permalink: '/projects/page/:num/'
+      permalink: '/page/:num/'
       title: ':title - page :num'
       limit: 0
       sort_field: 'date'
