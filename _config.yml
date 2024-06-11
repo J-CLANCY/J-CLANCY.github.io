@@ -244,8 +244,10 @@ timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 # Collections
 collections:
-  - posts
-  - projects
+  posts:
+    output: true
+  projects:
+    output: true
 
 # Pagination with jekyll-paginate-v2
 # See https://github.com/sverrirs/jekyll-paginate-v2/blob/master/README-GENERATOR.md#site-configuration
@@ -270,7 +272,7 @@ pagination:
         after: 2
     - name: 'projects'
       per_page: 5
-      permalink: '/page/:num/'
+      permalink: '/projects/page/:num/'
       title: ':title - page :num'
       limit: 0
       sort_field: 'date'
