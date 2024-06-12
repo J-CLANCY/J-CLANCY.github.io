@@ -21,8 +21,8 @@
 }
 
 .project-item {
-  background-color: #fff;
-  border: 1px solid #ddd;
+  background-color: #f9f9f9; /* Soft white background */
+  border: 1px solid #ddd; /* White border */
   border-radius: 8px;
   overflow: hidden;
   transition: box-shadow 0.3s, transform 0.3s;
