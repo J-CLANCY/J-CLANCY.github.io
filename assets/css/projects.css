@@ -1,0 +1,25 @@
+.projects-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.project-item {
+  border: 1px solid #ddd;
+  padding: 16px;
+  width: calc(33.333% - 32px);
+  box-sizing: border-box;
+  transition: box-shadow 0.3s;
+}
+
+.project-item:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.project-item h3 {
+  margin-top: 0;
+}
+
+.project-item p {
+  margin-bottom: 0;
+}
