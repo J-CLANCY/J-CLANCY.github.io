@@ -10,9 +10,9 @@ permalink: /projects/
 
 <div class="container">
   <h2>Current Projects</h2>
-  <div class="projects-grid">
+    <div class="projects-grid">
     {% for project in site.projects %}
-      {% if project.status == "current" %}
+      {% if project.status == "current" and project.icon %}
         <a href="{{ project.url }}" class="project-link">
           <div class="project-item">
             <img src="{{ project.icon }}" alt="{{ project.title }} icon" class="project-icon">
@@ -30,11 +30,12 @@ permalink: /projects/
       {% endif %}
     {% endfor %}
   </div>
+</div>
 
   <h2>Previous Projects</h2>
-  <div class="projects-grid">
+    <div class="projects-grid">
     {% for project in site.projects %}
-      {% if project.status == "completed" %}
+      {% if project.status == "current" and project.icon %}
         <a href="{{ project.url }}" class="project-link">
           <div class="project-item">
             <img src="{{ project.icon }}" alt="{{ project.title }} icon" class="project-icon">
@@ -52,4 +53,5 @@ permalink: /projects/
       {% endif %}
     {% endfor %}
   </div>
+</div>
 </div>
