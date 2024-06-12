@@ -10,9 +10,7 @@ permalink: /projects/
 
 
 <div class="container">
-  <h1>Projects</h1>
-  
-  <h2>Current Projects</h2>
+  <h1>Current Projects</h1>
   <div class="projects-grid">
     {% for project in site.projects %}
       {% if project.status == "current" %}
@@ -26,7 +24,7 @@ permalink: /projects/
     {% endfor %}
   </div>
   
-  <h2>Previous Projects</h2>
+  <h1>Previous Projects</h1>
   <div class="projects-grid">
     {% for project in site.projects %}
       {% if project.status == "completed" %}
