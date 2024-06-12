@@ -36,7 +36,7 @@ permalink: /projects/
   <h2>Previous Projects</h2>
   <div class="projects-grid">
     {% for project in site.projects %}
-      {% if project.status == "current" %}
+      {% if project.status == "completed" %}
         <a href="{{ project.url }}" class="project-link">
           <div class="project-item">
             {% if project.icon %}
