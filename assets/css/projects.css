@@ -1,3 +1,4 @@
+/* Center the container */
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -5,6 +6,7 @@
   text-align: center;
 }
 
+/* Ensure the grid items are centered within the container */
 .hex-grid {
   display: flex;
   flex-wrap: wrap;
@@ -14,11 +16,11 @@
 
 .hex {
   position: relative;
-  width: 160px; /* Adjust size as needed */
-  height: 92.38px;
-  margin: 46.19px 8px;
+  width: 120px; /* Adjust size as needed */
+  height: 104px;
+  margin: 0 6px;
   background-color: #ddd;
-  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  clip-path: polygon(25% 6.25%, 75% 6.25%, 100% 50%, 75% 93.75%, 25% 93.75%, 0% 50%);
   transition: transform 0.3s;
 }
 
@@ -32,7 +34,7 @@
   width: 100%;
   height: 100%;
   overflow: hidden;
-  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  clip-path: inherit;
 }
 
 .hex-link {
@@ -60,19 +62,21 @@
   margin-bottom: 0;
 }
 
+.hex:nth-child(odd) {
+  margin-top: 52px;
+}
+
+/* Responsive adjustments */
 @media (max-width: 768px) {
   .hex {
-    width: 120px;
-    height: 69.28px;
-    margin: 34.64px 6px;
+    width: 90px;
+    height: 78px;
   }
 }
 
 @media (max-width: 480px) {
   .hex {
-    width: 80px;
-    height: 46.19px;
-    margin: 23.09px 4px;
+    width: 60px;
+    height: 52px;
   }
 }
-
