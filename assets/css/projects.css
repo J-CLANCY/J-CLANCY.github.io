@@ -1,7 +1,17 @@
+/* Center the container */
+.container {
+  max-width: 800px; /* Set a maximum width for the content */
+  margin: 0 auto; /* Center the container horizontally */
+  padding: 16px; /* Add some padding for better spacing */
+  text-align: center; /* Center the text inside the container */
+}
+
+/* Ensure the grid items are centered within the container */
 .projects-grid {
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
+  justify-content: center; /* Center the grid items */
 }
 
 .project-item {
@@ -22,4 +32,17 @@
 
 .project-item p {
   margin-bottom: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .project-item {
+    width: calc(50% - 32px);
+  }
+}
+
+@media (max-width: 480px) {
+  .project-item {
+    width: 100%;
+  }
 }
