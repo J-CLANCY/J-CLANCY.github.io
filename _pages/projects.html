@@ -4,11 +4,36 @@ title: Projects
 permalink: /projects/
 ---
 
+<head>
+  <link rel="stylesheet" href="{{ "/assets/css/projects.css" | relative_url }}">
+</head>
+
 <h1>Projects</h1>
-<ul>
+
+<h2>Current Projects</h2>
+<div class="projects-grid">
   {% for project in site.projects %}
-    <li>
-      <a href="{{ project.url }}">{{ project.title }}</a> - {{ project.description }}
-    </li>
+    {% if project.status == "current" %}
+      <div class="project-item">
+        <a href="{{ project.url }}">
+          <h3>{{ project.title }}</h3>
+          <p>{{ project.description }}</p>
+        </a>
+      </div>
+    {% endif %}
   {% endfor %}
-</ul>
+</div>
+
+<h2>Completed Projects</h2>
+<div class="projects-grid">
+  {% for project in site.projects %}
+    {% if project.status == "completed" %}
+      <div class="project-item">
+        <a href="{{ project.url }}">
+          <h3>{{ project.title }}</h3>
+          <p>{{ project.description }}</p>
+        </a>
+      </div>
+    {% endif %}
+  {% endfor %}
+</div>
