@@ -248,6 +248,8 @@ collections:
     output: true
   projects:
     output: true
+    permalink: /projects/:path/
+    
 
 # Pagination with jekyll-paginate-v2
 # See https://github.com/sverrirs/jekyll-paginate-v2/blob/master/README-GENERATOR.md#site-configuration
@@ -265,19 +267,6 @@ pagination:
       sort_field: 'date'
       sort_reverse: true
       category: 'posts'
-      tag: ''
-      locale: ''
-      trail:
-        before: 2
-        after: 2
-    - name: 'projects'
-      per_page: 5
-      permalink: '/projects/page/:num/'
-      title: ':title - page :num'
-      limit: 0
-      sort_field: 'date'
-      sort_reverse: true
-      category: ''
       tag: ''
       locale: ''
       trail:
