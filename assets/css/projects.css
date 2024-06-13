@@ -20,49 +20,59 @@
   color: inherit;
 }
 
+/* Project Item */
 .project-item {
-  border: 1px solid #ddd; /* White border */
+  position: relative;
+  background: #171b23;
   border-radius: 8px;
-  overflow: hidden;
-  transition: box-shadow 0.3s, transform 0.3s;
-  width: 100%;
-  max-width: 300px;
-  box-sizing: border-box;
-  text-align: centre; /* Ensure content is aligned to the left inside the project card */
+  border: 1px solid #787676; /* White border */
+  padding: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
 }
 
 .project-item:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transform: translateY(-5px);
+  transform: scale(1.05);
 }
 
-.project-icon {
-  width: 100%;
-  height: auto;
-  max-height: 150px;
-  object-fit: cover;
+/* Project Title */
+.project-title {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
 }
 
-.project-content {
-  padding: 16px;
-  font-size: 16px;
+/* Project Description */
+.project-description {
+  font-size: 0.7rem;
+  text-align: left;
+  color: inherit;
+}
+
+/* Project Tags */
+.project-tags {
+  margin-top: 0.5rem;
   text-align: left;
 }
 
-.project-content h3 {
-  margin-top: 0;
-}
-
-.project-tags {
-  margin-top: 8px;
-}
-
-.tag {
+.project-tag {
   display: inline-block;
   background-color: #f0f0f0;
-  color: #333;
-  padding: 2px 4px;  /* Reduced padding */
-  margin: 1px;       /* Reduced margin */
+  color: black;
+  padding: 0.25rem 0.25rem;
   border-radius: 4px;
-  font-size: 0.75em; /* Reduced font size */
+  font-size: 0.5rem;
+  margin-right: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
+/* Optional: Project Icon */
+.project-icon {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 1rem auto;
 }
