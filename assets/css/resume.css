@@ -1,92 +1,155 @@
-/* Basic container and header styles */
-.resume-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 16px;
+.timeline-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
   text-align: center;
 }
 
-.timeline {
-  position: relative;
-  width: 100%;
-  padding: 20px 0;
-  box-sizing: border-box;
-}
-
-.timeline::after {
-  content: '';
-  position: absolute;
-  width: 6px;
-  background-color: #ddd;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  margin-left: -3px;
+.left-title, .right-title {
+  color: #fff; /* Adjust for dark mode */
+  margin: 0;
+  width: 50%; /* Make sure each title takes up half of the header width */
 }
 
 .timeline-container {
-  padding: 10px 40px;
+  display: flex;
+  justify-content: space-around; /* Distribute space evenly around the items */
+  padding: 20px;
+  position: relative; /* Ensure entries are positioned correctly */
+  max-width: 1200px; /* Set a maximum width for the timeline container */
+  margin: 0 auto; /* Center the container */
+}
+
+.timeline {
+  display: flex;
   position: relative;
-  background-color: inherit;
-  width: 50%;
+  width: 80%;
+  min-height: calc(var(--total-years) * 100px); /* Ensure the timeline grows based on the number of years */
 }
 
-.timeline-container.left {
-  left: 0;
-}
-
-.timeline-container.right {
-  left: 50%;
-}
-
-.timeline-container::after {
-  content: '';
+.timeline-line {
   position: absolute;
-  width: 25px;
-  height: 25px;
-  right: -17px;
-  background-color: white;
-  border: 4px solid #FF9F55;
-  top: 15px;
-  border-radius: 50%;
-  z-index: 1;
+  left: 50%;
+  width: 2px;
+  background: #fff; /* Adjust for dark mode */
+  height: 70%;
+  top: 18%;
 }
 
-.timeline-container.right::after {
-  left: -16px;
+.timeline-segments {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Ensure clicks pass through */
+  display: flex;
+  flex-direction: column-reverse; /* Stack segments from top (current year) to bottom (oldest year) */
 }
 
-.content {
-  padding: 20px 30px;
-  background-color: white;
+.timeline-segment {
   position: relative;
-  border-radius: 6px;
+  width: 100%;
+  height: calc(100% / var(--total-years)); /* Fixed height per year based on total years */
 }
 
-.timeline-container.left .content {
-  margin-left: 90px;
+.timeline-segment .year-label {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff; /* Adjust for dark mode */
+  font-size: 0.8rem;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 2px 6px;
+  border-radius: 3px;
 }
 
-.timeline-container.right .content {
-  margin-right: 90px;
+.timeline-left, .timeline-right {
+  width: 50%;
+  padding: 0 20px;
+  position: relative; /* For positioning the entries */
 }
 
-.content h2 {
+.timeline-entry {
+  position: absolute;
+  background: #171b23;
+  border-radius: 8px;
+  border: 1px solid #787676; /* White border */
+  padding: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+  margin: 10px 0;
+  width: 90%; /* Make the entries full width within their columns */
+  box-sizing: border-box; /* Ensure padding and border are included in the width */
+  overflow: hidden; /* Hide overflowing content */
+}
+
+.timeline-entry h3 {
   margin-top: 0;
-  color: #FF9F55;
 }
 
-.content h3 {
-  margin: 5px 0;
-  color: #333;
-}
-
-.content p {
-  margin: 5px 0;
-}
-
-.content span {
-  display: block;
+.timeline-entry .dates {
   font-weight: bold;
-  color: #999;
+  margin-bottom: 10px;
 }
+
+.timeline-left .timeline-entry {
+  left: 0;
+  right: auto;
+  transform: translateX(-20px); /* Adjust horizontal spacing */
+  text-align: right;
+}
+
+.timeline-right .timeline-entry {
+  right: 0;
+  left: auto;
+  transform: translateX(20px); /* Adjust horizontal spacing */
+  text-align: left;
+}
+
+.timeline-dialog {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #171b23;;
+  border-radius: 8px;
+  border: 1px solid #787676; /* White border */
+  padding: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 80%;
+  max-height: 80%;
+  overflow-y: auto;
+}
+
+.timeline-dialog[open] {
+  display: block;
+}
+
+.close-dialog {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.close-dialog:hover {
+  color: red;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(235, 235, 235, 0.5); /* Semi-transparent background */
+  z-index: 999; /* Ensure it's above other content */
+  display: none; /* Initially hidden */
+}
+

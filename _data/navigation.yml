@@ -6,8 +6,8 @@ main:
     url: "/resume/"
   - title: "Blog"
     url: "/blog/"
-  - title: "Slipbox"
-    url: "/slipbox/"
+  # - title: "Slipbox"
+  #   url: "/slipbox/"
   # - title: "About"
   #   url: https://mmistakes.github.io/minimal-mistakes/about/
   # - title: "Sample Posts"

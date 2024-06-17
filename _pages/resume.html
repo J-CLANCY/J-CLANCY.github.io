@@ -5,35 +5,47 @@ permalink: /resume/
 ---
 
 <head>
-  <link rel="stylesheet" href="{{ "/assets/css/resume.css" | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/resume.css' | relative_url }}">
 </head>
 
-<div class="resume-container">
-  <h1>My Resume</h1>
-  <div class="timeline">
-    <div class="timeline-container left">
-      <div class="content">
-        <h2>Education</h2>
-        <div class="timeline-item">
-          <h3>Degree Title</h3>
-          <p>Institution Name</p>
-          <span>Year</span>
-          <p>Details about the degree, courses taken, achievements, etc.</p>
-        </div>
-        <!-- Add more education items here -->
+<body>
+  <div class="timeline-header">
+    <h2 class="left-title">Education</h2>
+    <h2 class="right-title">Work Experience</h2>
+  </div>
+  <div class="timeline-container">
+    <div class="timeline">
+      <div class="timeline-segments"></div>
+      <div class="timeline-left">
+        {% for entry in site.data.education %}
+          <div class="timeline-entry education" data-start="{{ entry.start }}" data-end="{{ entry.end }}">
+            <h3>{{ entry.title }}</h3>
+            <dialog class="timeline-dialog">
+              <div>
+                <button class="close-dialog">&times;</button>
+                <div class="dates">{{ entry.start }} - {{ entry.end }}</div>
+                <div class="details">{{ entry.institution }}</div>
+              </div>
+            </dialog>
+          </div>
+        {% endfor %}
       </div>
-    </div>
-    <div class="timeline-container right">
-      <div class="content">
-        <h2>Work Experience</h2>
-        <div class="timeline-item">
-          <h3>Job Title</h3>
-          <p>Company Name</p>
-          <span>Year</span>
-          <p>Details about the job role, responsibilities, achievements, etc.</p>
-        </div>
-        <!-- Add more work experience items here -->
+      <div class="timeline-right">
+        {% for entry in site.data.work %}
+          <div class="timeline-entry work" data-start="{{ entry.start }}" data-end="{{ entry.end }}">
+            <h3>{{ entry.title }}</h3>
+            <dialog class="timeline-dialog">
+              <div>
+                <button class="close-dialog">&times;</button>
+                <div class="dates">{{ entry.start }} - {{ entry.end }}</div>
+                <div class="details">{{ entry.institution }}</div>
+              </div>
+            </dialog>
+          </div>
+        {% endfor %}
       </div>
     </div>
   </div>
-</div>
+  <div class="overlay"></div>
+  <script src="{{ '/assets/js/resume.js' | relative_url }}"></script>
+</body>
