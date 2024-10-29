@@ -1,55 +1,9 @@
 ---
-layout: default
 title: Projects
+layout: collection
+author_profile: true
 permalink: /projects/
+collection: projects
+entries_layout: grid
+classes: wide
 ---
-
-<head>
-  <link rel="stylesheet" href="{{ "/assets/css/projects.css" | relative_url }}">
-</head>
-
-<div class="container">
-  <h2>Current Projects</h2>
-  <div class="projects-grid">
-    {% for project in site.projects %}
-      {% if project.status == "current" %}
-        <a href="{{ project.url }}" class="project-link">
-          <div class="project-item">
-            {% if project.icon %}
-              <img src="{{ project.icon }}" alt="{{ project.title }} icon" class="project-icon">
-            {% endif %}
-            <h2 class="project-title">{{ project.title }}</h2>
-            <p class="project-description">{{ project.description }}</p>
-            <div class="project-tags">
-              {% for tag in project.tags %}
-                <span class="project-tag">{{ tag }}</span>
-              {% endfor %}
-            </div>
-          </div>
-        </a>
-      {% endif %}
-    {% endfor %}
-  </div>
-  
-  <h2>Previous Projects</h2>
-  <div class="projects-grid">
-    {% for project in site.projects %}
-      {% if project.status == "completed" %}
-        <a href="{{ project.url }}" class="project-link">
-          <div class="project-item">
-            {% if project.icon %}
-              <img src="{{ project.icon }}" alt="{{ project.title }} icon" class="project-icon">
-            {% endif %}
-            <h2 class="project-title">{{ project.title }}</h2>
-            <p class="project-description">{{ project.description }}</p>
-            <div class="project-tags">
-              {% for tag in project.tags %}
-                <span class="project-tag">{{ tag }}</span>
-              {% endfor %}
-            </div>
-          </div>
-        </a>
-      {% endif %}
-    {% endfor %}
-  </div>
-</div>
